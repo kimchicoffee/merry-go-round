@@ -16,6 +16,9 @@ import {
 
 export namespace Components {
 
+  interface AppCarousel {}
+  interface AppCarouselAttributes extends StencilHTMLAttributes {}
+
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
@@ -32,17 +35,25 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppCarousel': Components.AppCarousel;
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
   }
 
   interface StencilIntrinsicElements {
+    'app-carousel': Components.AppCarouselAttributes;
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
   }
 
+
+  interface HTMLAppCarouselElement extends Components.AppCarousel, HTMLStencilElement {}
+  var HTMLAppCarouselElement: {
+    prototype: HTMLAppCarouselElement;
+    new (): HTMLAppCarouselElement;
+  };
 
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
@@ -63,12 +74,14 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-carousel': HTMLAppCarouselElement
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
   }
 
   interface ElementTagNameMap {
+    'app-carousel': HTMLAppCarouselElement;
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
