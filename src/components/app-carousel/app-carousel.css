@@ -1,0 +1,9 @@
+.app-carousel-images {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.app-carousel-image {
+    padding: 10px;
+}
